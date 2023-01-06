@@ -1,11 +1,24 @@
 package org.belhard.hibernate.entity;
 
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity
+@Table(name = "users")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "login")
     private String login;
+
+    @Column(name = "password")
     private String password;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "personal_info_id")
     private PersonalInfo personalInfo;
 
     public Long getId() {

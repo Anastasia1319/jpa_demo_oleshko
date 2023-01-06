@@ -11,6 +11,9 @@ public class PersonalInfo {
     @Column(name = "id")
     private Long id;
 
+    @OneToOne(mappedBy = "personalInfo", cascade = CascadeType.ALL)
+    private User user;
+
     @Column (name = "email")
     private String email;
 
@@ -63,6 +66,14 @@ public class PersonalInfo {
         this.phoneNumber = phoneNumber;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @Override
     public String toString() {
         return "PersonalInfo{" +
@@ -71,6 +82,7 @@ public class PersonalInfo {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
+                ", user=" + user.getId() +
                 '}';
     }
 
@@ -79,11 +91,11 @@ public class PersonalInfo {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         PersonalInfo that = (PersonalInfo) o;
-        return Objects.equals(id, that.id) && Objects.equals(email, that.email) && Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName) && Objects.equals(phoneNumber, that.phoneNumber);
+        return Objects.equals(id, that.id) && Objects.equals(user, that.user) && Objects.equals(email, that.email) && Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName) && Objects.equals(phoneNumber, that.phoneNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, email, firstName, lastName, phoneNumber);
+        return Objects.hash(id, user, email, firstName, lastName, phoneNumber);
     }
 }
