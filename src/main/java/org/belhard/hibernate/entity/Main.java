@@ -1,4 +1,4 @@
-package org.example;
+package org.belhard.hibernate.entity;
 
 public class Main {
     public static void main(String[] args) {
