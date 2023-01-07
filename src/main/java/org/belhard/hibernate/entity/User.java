@@ -11,10 +11,10 @@ public class User {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "login")
+    @Column(name = "login", length = 75, nullable = false )
     private String login;
 
-    @Column(name = "password")
+    @Column(name = "password", length = 75, nullable = false)
     private String password;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
