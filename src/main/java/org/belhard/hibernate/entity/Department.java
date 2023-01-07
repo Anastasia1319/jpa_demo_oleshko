@@ -15,7 +15,7 @@ public class Department {
     @OneToMany(mappedBy = "department", cascade = CascadeType.REFRESH)
     private List<Employee> employees;
 
-    @Column(name = "name")
+    @Column(name = "name", length = 75, nullable = false)
     private String name;
 
     public Long getId() {
