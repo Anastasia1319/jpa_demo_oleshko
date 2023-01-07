@@ -13,10 +13,10 @@ public class Student {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "first_name")
+    @Column(name = "first_name", length = 25, nullable = false)
     private String firstName;
 
-    @Column(name = "last_name")
+    @Column(name = "last_name", length = 75, nullable = false)
     private String lastName;
 
     @ManyToMany(cascade = {CascadeType.PERSIST,
