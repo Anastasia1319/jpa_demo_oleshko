@@ -2,6 +2,7 @@ package org.belhard.hibernate;
 
 import org.belhard.hibernate.dao.DepartmentRepository;
 import org.belhard.hibernate.dao.UserRepository;
+import org.belhard.hibernate.dao.impl.DepartmentRepositoryImpl;
 import org.belhard.hibernate.dao.impl.UserRepositoryImpl;
 import org.belhard.hibernate.entity.Department;
 import org.belhard.hibernate.entity.PersonalInfo;
@@ -24,14 +25,17 @@ public class App {
             //find
 //            User user = manager.find(User.class, 13L);
 //            System.out.println(user.getLogin());
-            List<Department> departments = departmentRepository.findAll();
-            System.out.println(departments);
+
 
 //            userRepository = new UserRepositoryImpl(manager);
+            departmentRepository = new DepartmentRepositoryImpl(manager);
 
             //find all
 //            List<User> users = userRepository.findAll();
 //            System.out.println(users);
+
+            List<Department> departments = departmentRepository.findAll();
+            System.out.println(departments);
 
             //save
 //            PersonalInfo userInfo = new PersonalInfo();
