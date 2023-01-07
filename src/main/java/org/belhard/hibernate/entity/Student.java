@@ -1,12 +1,30 @@
 package org.belhard.hibernate.entity;
 
+import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
 
+@Entity
+@Table(name = "students")
 public class Student {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "first_name")
     private String firstName;
+
+    @Column(name = "last_name")
     private String lastName;
+
+    @ManyToMany(cascade = {CascadeType.PERSIST,
+                            CascadeType.MERGE,
+                            CascadeType.REFRESH})
+    @JoinTable(name = "students_sections",
+    joinColumns = @JoinColumn(name = "student_id"),
+    inverseJoinColumns = @JoinColumn(name = "section_id"))
     private List<Section> sections;
 
     public Long getId() {

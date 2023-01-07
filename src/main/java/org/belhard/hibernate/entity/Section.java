@@ -1,11 +1,24 @@
 package org.belhard.hibernate.entity;
 
+import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
 
+@Entity
+@Table(name = "sections")
 public class Section {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "name")
     private String name;
+
+    @ManyToMany(cascade = CascadeType.REFRESH)
+    @JoinTable(name = "students_sections",
+                joinColumns = @JoinColumn(name = "section_id"),
+                inverseJoinColumns = @JoinColumn(name = "student_id"))
     private List<Student> students;
 
     public Long getId() {
