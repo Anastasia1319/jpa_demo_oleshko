@@ -1,15 +1,8 @@
 package org.belhard.hibernate;
 
-import org.belhard.hibernate.dao.DepartmentRepository;
-import org.belhard.hibernate.dao.EmployeeRepository;
-import org.belhard.hibernate.dao.UserRepository;
-import org.belhard.hibernate.dao.impl.DepartmentRepositoryImpl;
-import org.belhard.hibernate.dao.impl.EmployeeRepositoryImpl;
-import org.belhard.hibernate.dao.impl.UserRepositoryImpl;
-import org.belhard.hibernate.entity.Department;
-import org.belhard.hibernate.entity.Employee;
-import org.belhard.hibernate.entity.PersonalInfo;
-import org.belhard.hibernate.entity.User;
+import org.belhard.hibernate.dao.*;
+import org.belhard.hibernate.dao.impl.*;
+import org.belhard.hibernate.entity.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -22,6 +15,8 @@ public class App {
     private static UserRepository userRepository;
     private static DepartmentRepository departmentRepository;
     private static EmployeeRepository employeeRepository;
+    private static SectionRepository sectionRepository;
+    private static StudentRepository studentRepository;
 
     public static void main(String[] args) {
         init();
@@ -33,11 +28,17 @@ public class App {
 //            System.out.println(department);
 //            Employee employee = manager.find(Employee.class, 999L);
 //            System.out.println(employee);
+//            Section section = manager.find(Section.class, 33L);
+//            System.out.println(section);
+//            Student student = manager.find(Student.class, 333L);
+//            System.out.println(student);
 
 
 //            userRepository = new UserRepositoryImpl(manager);
 //            departmentRepository = new DepartmentRepositoryImpl(manager);
 //            employeeRepository = new EmployeeRepositoryImpl(manager);
+//            sectionRepository = new SectionRepositoryImpl(manager);
+            studentRepository = new StudentRepositoryImpl(manager);
 
             //find all
 //            List<User> users = userRepository.findAll();
@@ -48,6 +49,12 @@ public class App {
 
 //            List<Employee> employees = employeeRepository.findAll();
 //            System.out.println(employees);
+
+//            List<Section> sections = sectionRepository.findAll();
+//            System.out.println(sections);
+
+//            List<Student> students = studentRepository.findAll();
+//            System.out.println(students);
 
             //save
 //            PersonalInfo userInfo = new PersonalInfo();
