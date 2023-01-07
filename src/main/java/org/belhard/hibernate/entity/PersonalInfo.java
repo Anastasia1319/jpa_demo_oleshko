@@ -11,16 +11,16 @@ public class PersonalInfo {
     @Column(name = "id")
     private Long id;
 
-    @Column (name = "email")
+    @Column (name = "email", length = 75, nullable = false)
     private String email;
 
-    @Column (name = "first_name")
+    @Column (name = "first_name", length = 75, nullable = false)
     private String firstName;
 
-    @Column (name = "last_name")
+    @Column (name = "last_name", length = 75, nullable = false)
     private String lastName;
 
-    @Column(name = "phone_number")
+    @Column(name = "phone_number", length = 75)
     private String phoneNumber;
 
     public Long getId() {
