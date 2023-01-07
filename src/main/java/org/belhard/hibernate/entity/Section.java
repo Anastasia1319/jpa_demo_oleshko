@@ -12,7 +12,7 @@ public class Section {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "name", length = 75, nullable = false)
     private String name;
 
     @ManyToMany(cascade = CascadeType.REFRESH)
