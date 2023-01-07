@@ -31,13 +31,13 @@ public class App {
 //            System.out.println(user.getLogin());
 //            Department department = manager.find(Department.class, 13L);
 //            System.out.println(department);
-            Employee employee = manager.find(Employee.class, 999L);
-            System.out.println(employee);
+//            Employee employee = manager.find(Employee.class, 999L);
+//            System.out.println(employee);
 
 
 //            userRepository = new UserRepositoryImpl(manager);
 //            departmentRepository = new DepartmentRepositoryImpl(manager);
-            employeeRepository = new EmployeeRepositoryImpl(manager);
+//            employeeRepository = new EmployeeRepositoryImpl(manager);
 
             //find all
 //            List<User> users = userRepository.findAll();
@@ -46,8 +46,8 @@ public class App {
 //            List<Department> departments = departmentRepository.findAll();
 //            System.out.println(departments);
 
-            List<Employee> employees = employeeRepository.findAll();
-            System.out.println(employees);
+//            List<Employee> employees = employeeRepository.findAll();
+//            System.out.println(employees);
 
             //save
 //            PersonalInfo userInfo = new PersonalInfo();
